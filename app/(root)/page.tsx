@@ -1,7 +1,10 @@
+import Hero from "@/components/landing/Hero"
 
 const page = () => {
     return (
-        <div>landing</div>
+        <div>
+            <Hero />
+        </div>
     )
 }
 
