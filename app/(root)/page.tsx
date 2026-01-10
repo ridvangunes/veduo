@@ -1,6 +1,7 @@
 import Hero from "@/components/landing/Hero"
 import SocialProof from "@/components/landing/SocialProof"
 import PopularCategories from "@/components/landing/PopularCategories"
+import Features from "@/components/landing/Features"
 
 const page = () => {
     return (
@@ -8,6 +9,7 @@ const page = () => {
             <Hero />
             <SocialProof />
             <PopularCategories />
+            <Features />
         </div>
     )
 }
