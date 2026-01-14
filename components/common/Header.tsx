@@ -15,8 +15,8 @@ const Header = () => {
     return (
         <nav
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
-                ? "bg-white/80 backdrop-blur-xl border-b border-slate-100 py-3"
-                : "bg-transparent py-5"
+                ? "bg-white/80 backdrop-blur-xl py-5"
+                : "bg-white py-5"
                 }`}
         >
             <div className="container mx-auto px-6 grid grid-cols-3 items-center">

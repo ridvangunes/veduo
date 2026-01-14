@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { CourseCard } from "@/components/course/list/course-card"
-import { CourseFilters } from "@/components/course/list/course-filters"
-import { CourseToolbar } from "@/components/course/list/course-toolbar"
-import { CourseSearch } from "@/components/course/list/course-search"
-import { CoursePagination } from "@/components/course/list/course-pagination"
+import { CourseCard } from "@/components/courses/list/course-card"
+import { CourseFilters } from "@/components/courses/list/course-filters"
+import { CourseToolbar } from "@/components/courses/list/course-toolbar"
+import { CourseSearch } from "@/components/courses/list/course-search"
+import { CoursePagination } from "@/components/courses/list/course-pagination"
 
 const CoursesPage = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false)
