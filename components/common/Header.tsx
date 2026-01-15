@@ -26,7 +26,10 @@ const Header = () => {
 
   if (isInstructorDashboard) {
     return (
-      <nav className="fixed top-0 inset-x-0 z-50 bg-white border-b border-border/40 h-16">
+      <nav
+        className="fixed top-0 inset-x-0 z-50 bg-white border-b border-border/40 h-16"
+        style={{ paddingRight: "var(--removed-body-scroll-bar-size, 0px)" }}
+      >
         <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
           {/* Left: Logo and Badge */}
           <div className="flex items-center gap-4">
@@ -178,6 +181,7 @@ const Header = () => {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white/80 backdrop-blur-xl py-5" : "bg-white py-5"
       }`}
+      style={{ paddingRight: "var(--removed-body-scroll-bar-size, 0px)" }}
     >
       <div className="container mx-auto px-6 grid grid-cols-3 items-center">
         <Link href="/" className="flex items-center gap-2 cursor-pointer group">

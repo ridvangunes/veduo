@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CreateCourseModal } from "./create-course/CreateCourseModal";
 
 const DashboardHeader = () => {
   return (
@@ -16,15 +16,15 @@ const DashboardHeader = () => {
           İşte bugün kurslarında olup bitenler.
         </p>
       </div>
-      <Link href="/instructor/create-course">
+      <CreateCourseModal>
         <Button
           size="lg"
-          className="gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+          className="gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all font-semibold"
         >
           <PlusCircle className="h-5 w-5" />
           Yeni Kurs Oluştur
         </Button>
-      </Link>
+      </CreateCourseModal>
     </div>
   );
 };
