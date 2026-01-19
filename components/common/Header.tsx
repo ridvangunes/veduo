@@ -131,13 +131,18 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="p-2 border-t border-slate-100">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="w-full text-xs h-8"
+                  <Link
+                    href="/dashboard/instructor/notifications"
+                    className="block w-full"
                   >
-                    Tümünü Gör
-                  </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="w-full text-xs h-8"
+                    >
+                      Tümünü Gör
+                    </Button>
+                  </Link>
                 </div>
               </PopoverContent>
             </Popover>

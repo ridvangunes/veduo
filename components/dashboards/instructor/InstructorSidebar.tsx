@@ -11,6 +11,7 @@ import {
   Users,
   BarChart3,
   MessageSquare,
+  Bell,
   Settings,
   Wallet,
   LogOut,
@@ -57,6 +58,11 @@ const sidebarSections = [
         href: "/dashboard/instructor/messages",
         icon: MessageSquare,
         badge: 3,
+      },
+      {
+        title: "Bildirimler",
+        href: "/dashboard/instructor/notifications",
+        icon: Bell,
       },
     ],
   },
@@ -108,7 +114,7 @@ const InstructorSidebar = () => {
                         "relative flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
                         isActive
                           ? "bg-blue-50 text-blue-700 shadow-sm shadow-blue-100/50"
-                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900",
                       )}
                     >
                       {isActive && (
@@ -121,7 +127,7 @@ const InstructorSidebar = () => {
                             "h-4.5 w-4.5",
                             isActive
                               ? "text-blue-600"
-                              : "text-slate-400 group-hover:text-slate-600"
+                              : "text-slate-400 group-hover:text-slate-600",
                           )}
                         />
                         <span>{item.title}</span>
