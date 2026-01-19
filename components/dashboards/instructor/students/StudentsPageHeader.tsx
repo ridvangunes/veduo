@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
+import { Mail, Megaphone } from "lucide-react";
+import { SendNotificationModal } from "../notifications/SendNotificationModal";
 
 const StudentsPageHeader = () => {
   return (
@@ -12,10 +13,13 @@ const StudentsPageHeader = () => {
           Kurslarına kayıtlı öğrencilerin listesi ve ilerleme durumları.
         </p>
       </div>
-      <Button variant="outline" className="gap-2">
-        <Mail className="h-4 w-4" />
-        Tümüne Mesaj Gönder
-      </Button>
+      <div className="flex items-center gap-3">
+        <SendNotificationModal />
+        <Button variant="outline" className="gap-2">
+          <Mail className="h-4 w-4" />
+          Tümüne Mesaj Gönder
+        </Button>
+      </div>
     </div>
   );
 };

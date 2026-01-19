@@ -4,6 +4,7 @@ import { Bell, Check, Trash2, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { SendNotificationModal } from "@/components/dashboards/instructor/notifications/SendNotificationModal";
 
 const notifications = [
   {
@@ -78,6 +79,7 @@ export default function NotificationsPage() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          <SendNotificationModal />
           <Button variant="outline" size="sm" className="gap-2">
             <Check className="h-4 w-4" />
             Tümünü Okundu İşaretle
