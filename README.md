@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Online Learning Platform (SaaS)
 
-## Getting Started
+A modern, scalable online learning platform built with a strong focus on clean UI architecture, long-term maintainability, and product-oriented development.  
+This project is designed as a real-world SaaS foundation rather than a simple demo or tutorial clone.
 
-First, run the development server:
+---
+
+## ✨ Project Vision
+
+The goal of this project is to design and implement a learning platform that:
+
+- Provides a clean and consistent user experience  
+- Scales naturally as features and users grow  
+- Maintains a clear separation between UI, logic, and data layers  
+- Serves as a solid foundation for authentication, dashboards, and course management  
+
+This project reflects a production-first mindset with emphasis on architecture, UX quality, and sustainable frontend development.
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework:** Next.js (App Router)  
+- **Language:** TypeScript  
+- **Styling:** Tailwind CSS  
+- **UI Components:** shadcn/ui  
+- **Version Control:** Git & GitHub  
+- **Deployment:** Vercel  
+
+---
+
+## 🧠 Architecture & Approach
+
+- Component-driven and modular UI architecture  
+- Reusable and composable component system  
+- Responsive and accessible layouts  
+- Scalable folder structure designed for long-term growth  
+- Early focus on UX consistency, performance, and maintainability  
+
+The UI layer is developed first to establish a strong visual and structural foundation before implementing complex business logic and backend integrations.
+
+---
+
+## 🚧 Current Status
+
+- ✅ Core layout and design system implemented  
+- ✅ Reusable UI components in place  
+- 🔄 Client-side logic in progress  
+- 🔜 Authentication and role-based access  
+- 🔜 Course management and dashboards  
+- 🔜 Backend and payment integrations  
+
+---
+
+## 🗺️ Planned Features
+
+- User authentication (students / instructors / admin)  
+- Role-based access control  
+- Course creation and management  
+- Video-based lesson structure  
+- Progress tracking and certificates  
+- Instructor and student dashboards  
+- Payment integration  
+- SEO-friendly public course pages  
+
+---
+
+## 📸 Preview
+
+Live Demo (UI-focused):  
+👉 https://YOUR-PROJECT.vercel.app  
+
+Screenshots:  
+*(You can add UI screenshots here later for better presentation)*  
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or later)
+- npm or yarn
+
+---
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Open your browser and navigate to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+📌 Notes
 
-To learn more about Next.js, take a look at the following resources:
+This project is actively being developed and represents my current approach to frontend architecture, UI design, and product thinking.
+The codebase is structured to evolve into a full production-ready SaaS application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👤 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Rıdvan Güneş**  
+Frontend Developer  
 
-## Deploy on Vercel
+- LinkedIn: https://www.linkedin.com/in/rıdvan-güneş-12b260123  
+- GitHub: https://github.com/YOUR-USERNAME  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📄 License
+
+This project is open-source and available under the MIT License.
+
