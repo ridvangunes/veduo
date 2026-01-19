@@ -127,8 +127,8 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                         isActive
                           ? "border-blue-600 bg-blue-600 text-white shadow-lg shadow-blue-600/20"
                           : isCompleted
-                          ? "border-blue-600 bg-white text-blue-600"
-                          : "border-slate-200 bg-white text-slate-300"
+                            ? "border-blue-600 bg-white text-blue-600"
+                            : "border-slate-200 bg-white text-slate-300",
                       )}
                     >
                       {isCompleted ? (
@@ -140,7 +140,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                     <span
                       className={cn(
                         "text-[10px] font-bold tracking-wider uppercase transition-colors duration-300",
-                        isActive ? "text-blue-600" : "text-slate-400"
+                        isActive ? "text-blue-600" : "text-slate-400",
                       )}
                     >
                       {s.title}
@@ -152,7 +152,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                     <div
                       className={cn(
                         "flex-1 h-0.5 mt-5 mx-4 transition-all duration-500",
-                        step > i + 1 ? "bg-blue-600" : "bg-slate-200"
+                        step > i + 1 ? "bg-blue-600" : "bg-slate-200",
                       )}
                     />
                   )}
@@ -186,7 +186,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                     </label>
                     <Input
                       placeholder="Örn: Sıfırdan İleri Seviye Next.js Rehberi"
-                      className="h-12 text-base"
+                      className="text-base"
                       value={basicInfo.title}
                       onChange={(e) =>
                         setBasicInfo({ ...basicInfo, title: e.target.value })
@@ -208,7 +208,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                           setBasicInfo({ ...basicInfo, category: v })
                         }
                       >
-                        <SelectTrigger className="h-12 w-full text-base px-3">
+                        <SelectTrigger className="w-full text-base px-3">
                           <SelectValue placeholder="Seçiniz..." />
                         </SelectTrigger>
                         <SelectContent>
@@ -230,7 +230,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                           setBasicInfo({ ...basicInfo, level: v })
                         }
                       >
-                        <SelectTrigger className="h-12 w-full text-base px-3">
+                        <SelectTrigger className="w-full text-base px-3">
                           <SelectValue placeholder="Seçiniz..." />
                         </SelectTrigger>
                         <SelectContent>
@@ -433,7 +433,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                       "p-6 rounded-xl border-2 cursor-pointer transition-all",
                       pricing.type === "paid"
                         ? "border-blue-600 bg-blue-50/50"
-                        : "border-slate-200 hover:border-slate-300"
+                        : "border-slate-200 hover:border-slate-300",
                     )}
                   >
                     <h3
@@ -441,7 +441,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                         "font-bold text-lg",
                         pricing.type === "paid"
                           ? "text-blue-700"
-                          : "text-slate-900"
+                          : "text-slate-900",
                       )}
                     >
                       Ücretli
@@ -456,7 +456,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                       "p-6 rounded-xl border-2 cursor-pointer transition-all",
                       pricing.type === "free"
                         ? "border-blue-600 bg-blue-50/50"
-                        : "border-slate-200 hover:border-slate-300"
+                        : "border-slate-200 hover:border-slate-300",
                     )}
                   >
                     <h3
@@ -464,7 +464,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                         "font-bold text-lg",
                         pricing.type === "free"
                           ? "text-blue-700"
-                          : "text-slate-900"
+                          : "text-slate-900",
                       )}
                     >
                       Ücretsiz
@@ -485,7 +485,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                         <Input
                           type="number"
                           placeholder="499"
-                          className="h-12 text-lg"
+                          className="text-lg"
                           value={pricing.price}
                           onChange={(e) =>
                             setPricing({ ...pricing, price: e.target.value })
@@ -499,7 +499,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
                         <Input
                           type="number"
                           placeholder="199"
-                          className="h-12 text-lg"
+                          className="text-lg"
                           value={pricing.discountedPrice}
                           onChange={(e) =>
                             setPricing({
@@ -540,7 +540,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
             <Button
               variant="outline"
               onClick={handleBack}
-              className="h-11 px-6 border-slate-200 text-slate-600 hover:text-slate-900"
+              className="px-6 border-slate-200 text-slate-600 hover:text-slate-900"
             >
               <ChevronLeft className="w-4 h-4 mr-2" />
               Geri Dön
@@ -555,7 +555,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
             </span>
             <Button
               onClick={handleNext}
-              className="h-11 px-8 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20"
+              className="px-8 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20"
             >
               {step === steps.length ? "Yayınla" : "İlerle"}
               {step !== steps.length && (

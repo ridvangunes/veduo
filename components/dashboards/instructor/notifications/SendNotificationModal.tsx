@@ -101,7 +101,7 @@ export function SendNotificationModal({
                       Hedef Öğrenci Grubu
                     </label>
                     <Select defaultValue="all">
-                      <SelectTrigger className="h-12 w-full text-base px-4 bg-white border-slate-200">
+                      <SelectTrigger className="w-full text-base px-4 bg-white border-slate-200">
                         <div className="flex items-center gap-2">
                           <Users className="h-4 w-4 text-slate-400" />
                           <SelectValue placeholder="Grup Seçin" />
@@ -153,7 +153,7 @@ export function SendNotificationModal({
           <Button
             variant="outline"
             onClick={() => setOpen(false)}
-            className="h-11 px-6 border-slate-200 text-slate-600 hover:text-slate-900"
+            className="px-6 border-slate-200 text-slate-600 hover:text-slate-900"
           >
             Vazgeç
           </Button>
@@ -165,7 +165,7 @@ export function SendNotificationModal({
             <Button
               onClick={handleSend}
               disabled={isSending}
-              className="h-11 px-8 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 font-bold"
+              className="px-8 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/20 font-bold"
             >
               {isSending ? (
                 <div className="flex items-center gap-2">
