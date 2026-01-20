@@ -17,6 +17,8 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isInstructorDashboard = pathname?.startsWith("/dashboard/instructor");
+  const isStudentDashboard = pathname?.startsWith("/dashboard/student");
+  const isDashboard = isInstructorDashboard || isStudentDashboard;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -24,7 +26,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (isInstructorDashboard) {
+  if (isDashboard) {
     return (
       <nav
         className="fixed top-0 inset-x-0 z-50 bg-white border-b border-border/40 h-16"
@@ -48,7 +50,7 @@ const Header = () => {
               variant="secondary"
               className="hidden sm:flex text-muted-foreground bg-slate-100 hover:bg-slate-100 font-medium px-3 py-1 text-xs"
             >
-              Eğitmen Paneli
+              {isInstructorDashboard ? "Eğitmen Paneli" : "Öğrenci Paneli"}
             </Badge>
           </div>
 
