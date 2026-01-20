@@ -11,11 +11,14 @@ const StudentDashboardHeader = ({ userName }: StudentDashboardHeaderProps) => {
   return (
     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-          Merhaba, {userName}! 👋
+        <h1 className="text-3xl font-bold tracking-tight">
+          <span className="bg-linear-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+            Hoş geldin, {userName}
+          </span>{" "}
+          <span>👋</span>
         </h1>
-        <p className="text-muted-foreground mt-1 text-lg">
-          Öğrenmeye kaldığın yerden devam etmeye ne dersin?
+        <p className="text-muted-foreground mt-1">
+          İşte bugün kurslarında olup bitenler.
         </p>
       </div>
       <div className="flex items-center gap-3">
