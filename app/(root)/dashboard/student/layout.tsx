@@ -7,14 +7,14 @@ export default function StudentDashboardLayout({
 }) {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Left Sidebar Menu */}
-        <div className="lg:col-span-3">
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Left Sidebar Menu - Hidden on mobile, shown on lg */}
+        <aside className="hidden lg:block w-72 shrink-0">
           <StudentSidebar />
-        </div>
+        </aside>
 
         {/* Main Content Area */}
-        <div className="lg:col-span-9 space-y-8">{children}</div>
+        <main className="flex-1 min-w-0 space-y-8">{children}</main>
       </div>
     </div>
   );

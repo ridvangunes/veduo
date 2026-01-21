@@ -20,12 +20,12 @@ const Hero = () => {
                 Yeni Nesil Eğitim Platformu
               </span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.1] mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.1] mb-8">
               Geleceğin{" "}
               <span className="text-blue-600 italic">Yeteneklerini</span> Bugün
               Keşfedin.
             </h1>
-            <p className="text-xl text-slate-500 leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg sm:text-xl text-slate-500 leading-relaxed mb-10 max-w-xl">
               Dünyanın en iyi eğitmenlerinden, sektör odaklı kurslar.
               Kariyerinizi bir üst seviyeye taşımak için ihtiyacınız olan her
               şey burada.
@@ -84,7 +84,7 @@ const Hero = () => {
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000"
                 alt="Learning Team"
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20">

@@ -13,7 +13,7 @@ const CourseDetailPage = () => {
       <CourseHero />
 
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-3 gap-12 -mt-12 lg:-mt-32 relative z-10 pb-20">
+        <div className="grid lg:grid-cols-3 gap-12 lg:-mt-32 relative z-10 pb-20">
           {/* Main Content Area */}
           <div className="lg:col-span-2 space-y-12">
             <CourseLearningOutcomes />

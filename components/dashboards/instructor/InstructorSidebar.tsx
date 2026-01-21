@@ -78,12 +78,10 @@ const sidebarSections = [
   },
 ];
 
-const InstructorSidebar = () => {
+export const InstructorSidebarContent = () => {
   const pathname = usePathname();
-
   return (
-    <div className="bg-white rounded-xl border border-border/60 shadow-sm p-4 sticky top-24">
-      {/* Pro Badge/Callout */}
+    <div className="space-y-6">
       <div className="mb-6 p-4 rounded-lg bg-linear-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
         <div className="flex items-center gap-2 mb-2">
           <Sparkles className="h-4 w-4 text-yellow-300" />
@@ -157,6 +155,14 @@ const InstructorSidebar = () => {
           Çıkış Yap
         </button>
       </div>
+    </div>
+  );
+};
+
+const InstructorSidebar = () => {
+  return (
+    <div className="bg-white rounded-xl border border-border/60 shadow-sm p-4 sticky top-24">
+      <InstructorSidebarContent />
     </div>
   );
 };
