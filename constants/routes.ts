@@ -1,0 +1,28 @@
+export const ROUTES = {
+  HOME: "/",
+  COURSES: "/courses",
+  COURSE_DETAIL: "/courses/detail",
+  DASHBOARD: {
+    STUDENT: {
+      OVERVIEW: "/dashboard/student",
+      COURSES: "/dashboard/student/courses",
+      CERTIFICATES: "/dashboard/student/certificates",
+      WISHLIST: "/dashboard/student/wishlist",
+      MESSAGES: "/dashboard/student/messages",
+      NOTIFICATIONS: "/dashboard/student/notifications",
+      ACHIEVEMENTS: "/dashboard/student/achievements",
+      SETTINGS: "/dashboard/student/settings",
+    },
+    INSTRUCTOR: {
+      OVERVIEW: "/dashboard/instructor",
+      COURSES: "/dashboard/instructor/courses",
+      STUDENTS: "/dashboard/instructor/students",
+      FINANCE: "/dashboard/instructor/finance",
+      ANALYTICS: "/dashboard/instructor/analytics",
+      MESSAGES: "/dashboard/instructor/messages",
+      NOTIFICATIONS: "/dashboard/instructor/notifications",
+      SETTINGS: "/dashboard/instructor/settings",
+      COURSE_EDIT: (id: string | number) => `/dashboard/instructor/courses/${id}/edit`,
+    },
+  },
+} as const;

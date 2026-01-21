@@ -35,6 +35,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
+import { ROUTES } from "@/constants/routes";
+
 interface CreateCourseModalProps {
   children?: React.ReactNode;
 }
@@ -86,7 +88,7 @@ export function CreateCourseModal({ children }: CreateCourseModalProps) {
     // Reset and redirect
     setTimeout(() => {
       setStep(1);
-      router.push("/dashboard/instructor/courses/1/edit");
+      router.push(ROUTES.DASHBOARD.INSTRUCTOR.COURSE_EDIT(1));
     }, 300);
   };
 

@@ -3,6 +3,7 @@
 import { Trophy, Sparkles, Timer, ArrowLeft, Construction } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
 
 export default function StudentAchievementsPage() {
   return (
@@ -60,7 +61,7 @@ export default function StudentAchievementsPage() {
           </div>
         </div>
 
-        <Link href="/dashboard/student" className="block">
+        <Link href={ROUTES.DASHBOARD.STUDENT.OVERVIEW} className="block">
           <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold h-12 gap-2 shadow-xl shadow-blue-600/20 transition-all active:scale-95">
             <ArrowLeft className="w-4 h-4" />
             Dashboard'a Dön

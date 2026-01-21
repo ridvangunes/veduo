@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   LayoutDashboard,
@@ -18,6 +17,7 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
+import { ROUTES } from "@/constants/routes";
 
 const sidebarSections = [
   {
@@ -25,22 +25,22 @@ const sidebarSections = [
     items: [
       {
         title: "Genel Bakış",
-        href: "/dashboard/instructor",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.OVERVIEW,
         icon: LayoutDashboard,
       },
       {
         title: "Kurslarım",
-        href: "/dashboard/instructor/courses",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.COURSES,
         icon: BookOpen,
       },
       {
         title: "Öğrenciler",
-        href: "/dashboard/instructor/students",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.STUDENTS,
         icon: Users,
       },
       {
         title: "Finans",
-        href: "/dashboard/instructor/finance",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.FINANCE,
         icon: Wallet,
       },
     ],
@@ -50,18 +50,18 @@ const sidebarSections = [
     items: [
       {
         title: "Analizler",
-        href: "/dashboard/instructor/analytics",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.ANALYTICS,
         icon: BarChart3,
       },
       {
         title: "Mesajlar",
-        href: "/dashboard/instructor/messages",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.MESSAGES,
         icon: MessageSquare,
         badge: 3,
       },
       {
         title: "Bildirimler",
-        href: "/dashboard/instructor/notifications",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.NOTIFICATIONS,
         icon: Bell,
       },
     ],
@@ -71,7 +71,7 @@ const sidebarSections = [
     items: [
       {
         title: "Ayarlar",
-        href: "/dashboard/instructor/settings",
+        href: ROUTES.DASHBOARD.INSTRUCTOR.SETTINGS,
         icon: Settings,
       },
     ],
@@ -133,7 +133,7 @@ const InstructorSidebar = () => {
                         <span>{item.title}</span>
                       </div>
 
-                      {item.badge && (
+                      {"badge" in item && item.badge && (
                         <Badge className="h-5 w-5 p-0 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 hover:bg-blue-100 hover:text-blue-700 text-[10px] shadow-none">
                           {item.badge}
                         </Badge>

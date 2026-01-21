@@ -17,6 +17,7 @@ import {
   Sparkles,
   Trophy,
 } from "lucide-react";
+import { ROUTES } from "@/constants/routes";
 
 const sidebarSections = [
   {
@@ -24,22 +25,22 @@ const sidebarSections = [
     items: [
       {
         title: "Genel Bakış",
-        href: "/dashboard/student",
+        href: ROUTES.DASHBOARD.STUDENT.OVERVIEW,
         icon: LayoutDashboard,
       },
       {
         title: "Kurslarım",
-        href: "/dashboard/student/courses",
+        href: ROUTES.DASHBOARD.STUDENT.COURSES,
         icon: BookOpen,
       },
       {
         title: "Sertifikalarım",
-        href: "/dashboard/student/certificates",
+        href: ROUTES.DASHBOARD.STUDENT.CERTIFICATES,
         icon: GraduationCap,
       },
       {
         title: "Favoriler",
-        href: "/dashboard/student/wishlist",
+        href: ROUTES.DASHBOARD.STUDENT.WISHLIST,
         icon: Heart,
       },
     ],
@@ -49,13 +50,13 @@ const sidebarSections = [
     items: [
       {
         title: "Mesajlar",
-        href: "/dashboard/student/messages",
+        href: ROUTES.DASHBOARD.STUDENT.MESSAGES,
         icon: MessageSquare,
         badge: 2,
       },
       {
         title: "Bildirimler",
-        href: "/dashboard/student/notifications",
+        href: ROUTES.DASHBOARD.STUDENT.NOTIFICATIONS,
         icon: Bell,
         badge: 3,
       },
@@ -66,12 +67,12 @@ const sidebarSections = [
     items: [
       {
         title: "Başarılarım",
-        href: "/dashboard/student/achievements",
+        href: ROUTES.DASHBOARD.STUDENT.ACHIEVEMENTS,
         icon: Trophy,
       },
       {
         title: "Ayarlar",
-        href: "/dashboard/student/settings",
+        href: ROUTES.DASHBOARD.STUDENT.SETTINGS,
         icon: Settings,
       },
     ],

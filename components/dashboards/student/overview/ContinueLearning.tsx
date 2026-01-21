@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PlayCircle, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
 
 const activeCourses = [
   {
@@ -32,7 +33,7 @@ const ContinueLearning = () => {
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-slate-900">Öğrenmeye Devam Et</h2>
         <Link
-          href="/dashboard/student/courses"
+          href={ROUTES.DASHBOARD.STUDENT.COURSES}
           className="text-sm font-semibold text-blue-600 hover:underline flex items-center gap-1"
         >
           Tüm Kurslarım <ChevronRight className="h-4 w-4" />

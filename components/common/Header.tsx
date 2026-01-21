@@ -13,11 +13,17 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
+import { ROUTES } from "@/constants/routes";
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isInstructorDashboard = pathname?.startsWith("/dashboard/instructor");
-  const isStudentDashboard = pathname?.startsWith("/dashboard/student");
+  const isInstructorDashboard = pathname?.startsWith(
+    ROUTES.DASHBOARD.INSTRUCTOR.OVERVIEW,
+  );
+  const isStudentDashboard = pathname?.startsWith(
+    ROUTES.DASHBOARD.STUDENT.OVERVIEW,
+  );
   const isDashboard = isInstructorDashboard || isStudentDashboard;
 
   useEffect(() => {
@@ -36,7 +42,7 @@ const Header = () => {
           {/* Left: Logo and Badge */}
           <div className="flex items-center gap-4">
             <Link
-              href="/"
+              href={ROUTES.HOME}
               className="flex items-center gap-2 cursor-pointer group"
             >
               <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center group-hover:rotate-6 transition-transform shadow-sm shadow-blue-600/30">
@@ -134,7 +140,7 @@ const Header = () => {
                 </div>
                 <div className="p-2 border-t border-slate-100">
                   <Link
-                    href="/dashboard/instructor/notifications"
+                    href={ROUTES.DASHBOARD.INSTRUCTOR.NOTIFICATIONS}
                     className="block w-full"
                   >
                     <Button
@@ -191,7 +197,10 @@ const Header = () => {
       style={{ paddingRight: "var(--removed-body-scroll-bar-size, 0px)" }}
     >
       <div className="container mx-auto px-6 grid grid-cols-3 items-center">
-        <Link href="/" className="flex items-center gap-2 cursor-pointer group">
+        <Link
+          href={ROUTES.HOME}
+          className="flex items-center gap-2 cursor-pointer group"
+        >
           <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center group-hover:rotate-6 transition-transform shadow-lg shadow-blue-600/30">
             <Play className="text-white fill-current w-5 h-5 ml-0.5" />
           </div>
@@ -201,9 +210,12 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center justify-center gap-8 text-sm font-bold text-slate-600">
-          <a href="#" className="hover:text-blue-600 transition-colors">
+          <Link
+            href={ROUTES.COURSES}
+            className="hover:text-blue-600 transition-colors"
+          >
             Kurslar
-          </a>
+          </Link>
           <a href="#" className="hover:text-blue-600 transition-colors">
             Eğitmenler
           </a>
