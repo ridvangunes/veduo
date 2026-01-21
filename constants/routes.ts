@@ -29,4 +29,7 @@ export const ROUTES = {
       COURSE_EDIT: (id: string | number) => `/dashboard/instructor/courses/${id}/edit`,
     },
   },
+  CART: "/cart",
+  CHECKOUT: "/checkout",
+  SUCCESS: "/success",
 } as const;

@@ -230,16 +230,18 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-3">
           {isLoggedIn ? (
             <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-600 relative group"
-              >
-                <ShoppingCart className="h-5 w-5 group-hover:text-blue-600 transition-colors" />
-                <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-blue-600 border-2 border-white text-[10px] text-white flex items-center justify-center font-bold">
-                  2
-                </span>
-              </Button>
+              <Link href={ROUTES.CART}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-600 relative group"
+                >
+                  <ShoppingCart className="h-5 w-5 group-hover:text-blue-600 transition-colors" />
+                  <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-blue-600 border-2 border-white text-[10px] text-white flex items-center justify-center font-bold">
+                    2
+                  </span>
+                </Button>
+              </Link>
               <UserMenu />
             </div>
           ) : (
