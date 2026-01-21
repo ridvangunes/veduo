@@ -1,6 +1,16 @@
 "use client";
 
-import { Play, Search, Bell, User, Settings, LogOut, Menu } from "lucide-react";
+import {
+  Play,
+  Search,
+  Bell,
+  User,
+  Settings,
+  LogOut,
+  Menu,
+  LayoutDashboard,
+  ShoppingCart,
+} from "lucide-react";
 import { Button } from "../ui/button";
 import {
   Popover,
@@ -25,10 +35,53 @@ import { ROUTES } from "@/constants/routes";
 import { SidebarContent } from "../dashboards/student/StudentSidebar";
 import { InstructorSidebarContent } from "../dashboards/instructor/InstructorSidebar";
 
+const UserMenu = () => (
+  <Popover>
+    <PopoverTrigger asChild>
+      <div className="h-9 w-9 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 cursor-pointer overflow-hidden border border-slate-200 hover:border-blue-200 transition-colors">
+        <User className="h-5 w-5" />
+      </div>
+    </PopoverTrigger>
+    <PopoverContent
+      align="end"
+      className="w-56 p-1 rounded-2xl border-slate-100 shadow-xl mt-2"
+    >
+      <div className="px-3 py-2 border-b border-slate-50 mb-1">
+        <p className="text-sm font-bold text-slate-900 leading-none">
+          Arda Güneş
+        </p>
+        <p className="text-[10px] text-slate-500 mt-1 font-medium italic">
+          Öğrenci
+        </p>
+      </div>
+      <div className="p-1 space-y-0.5">
+        <Link href={ROUTES.DASHBOARD.STUDENT.OVERVIEW}>
+          <button className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all text-left">
+            <LayoutDashboard className="h-4 w-4" />
+            <span>Panelim</span>
+          </button>
+        </Link>
+        <button className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all text-left">
+          <Settings className="h-4 w-4" />
+          <span>Ayarlar</span>
+        </button>
+      </div>
+      <div className="h-px bg-slate-50 my-1 mx-2" />
+      <div className="p-1">
+        <button className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm font-bold text-red-600 hover:bg-red-50 transition-all text-left">
+          <LogOut className="h-4 w-4" />
+          <span>Çıkış Yap</span>
+        </button>
+      </div>
+    </PopoverContent>
+  </Popover>
+);
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDashboardMenuOpen, setIsDashboardMenuOpen] = useState(false);
+  const [isLoggedIn] = useState(false); // Mock login state (Toggle to true for testing)
   const pathname = usePathname();
 
   const isInstructorDashboard = pathname?.startsWith(
@@ -131,25 +184,7 @@ const Header = () => {
               </PopoverContent>
             </Popover>
 
-            <Popover>
-              <PopoverTrigger asChild>
-                <div className="h-8 w-8 sm:h-9 sm:w-9 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 cursor-pointer overflow-hidden">
-                  <User className="h-5 w-5" />
-                </div>
-              </PopoverTrigger>
-              <PopoverContent align="end" className="w-56 p-1">
-                <div className="px-2 py-1.5 border-b mb-1">
-                  <p className="text-sm font-medium">Arda Güneş</p>
-                  <p className="text-xs text-slate-500">arda@veduo.com</p>
-                </div>
-                <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-slate-100 rounded">
-                  <Settings className="h-4 w-4" /> Ayarlar
-                </button>
-                <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded mt-1">
-                  <LogOut className="h-4 w-4" /> Çıkış Yap
-                </button>
-              </PopoverContent>
-            </Popover>
+            <UserMenu />
           </div>
         </div>
       </nav>
@@ -193,16 +228,34 @@ const Header = () => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-3">
-          <Link href={ROUTES.AUTH.LOGIN}>
-            <Button variant="ghost" className="font-bold">
-              Giriş Yap
-            </Button>
-          </Link>
-          <Link href={ROUTES.AUTH.REGISTER}>
-            <Button className="rounded-full bg-blue-600 hover:bg-blue-700 font-bold">
-              Hemen Başla
-            </Button>
-          </Link>
+          {isLoggedIn ? (
+            <div className="flex items-center gap-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-slate-600 relative group"
+              >
+                <ShoppingCart className="h-5 w-5 group-hover:text-blue-600 transition-colors" />
+                <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-blue-600 border-2 border-white text-[10px] text-white flex items-center justify-center font-bold">
+                  2
+                </span>
+              </Button>
+              <UserMenu />
+            </div>
+          ) : (
+            <>
+              <Link href={ROUTES.AUTH.LOGIN}>
+                <Button variant="ghost" className="font-bold">
+                  Giriş Yap
+                </Button>
+              </Link>
+              <Link href={ROUTES.AUTH.REGISTER}>
+                <Button className="rounded-full bg-blue-600 hover:bg-blue-700 font-bold">
+                  Hemen Başla
+                </Button>
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Trigger */}
@@ -222,7 +275,29 @@ const Header = () => {
               </SheetTitle>
             </SheetHeader>
             <div className="flex flex-col gap-6">
+              {isLoggedIn && (
+                <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                  <div className="h-12 w-12 bg-white rounded-full flex items-center justify-center text-slate-500 shadow-sm">
+                    <User className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 leading-none">
+                      Arda Güneş
+                    </p>
+                    <p className="text-xs text-slate-500 mt-1">
+                      arda@veduo.com
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <div className="flex flex-col gap-4">
+                <Link
+                  href={ROUTES.DASHBOARD.STUDENT.OVERVIEW}
+                  className="text-lg font-bold text-blue-600 border-b pb-2 flex items-center justify-between"
+                >
+                  Panelim <LayoutDashboard className="h-5 w-5" />
+                </Link>
                 <Link
                   href={ROUTES.COURSES}
                   className="text-lg font-bold text-slate-900 border-b pb-2"
@@ -235,27 +310,30 @@ const Header = () => {
                 >
                   Eğitmenler
                 </a>
-                <a
-                  href="#"
-                  className="text-lg font-bold text-slate-900 border-b pb-2"
-                >
-                  Kurumsal
-                </a>
               </div>
+
               <div className="flex flex-col gap-3 mt-4">
-                <Link href={ROUTES.AUTH.LOGIN}>
-                  <Button
-                    variant="outline"
-                    className="w-full h-12 font-bold rounded-xl"
-                  >
-                    Giriş Yap
-                  </Button>
-                </Link>
-                <Link href={ROUTES.AUTH.REGISTER}>
-                  <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 font-bold rounded-xl">
-                    Hemen Başla
-                  </Button>
-                </Link>
+                {isLoggedIn ? (
+                  <button className="w-full h-12 flex items-center justify-center gap-2 font-bold text-red-600 bg-red-50 rounded-xl">
+                    <LogOut className="h-5 w-5" /> Çıkış Yap
+                  </button>
+                ) : (
+                  <>
+                    <Link href={ROUTES.AUTH.LOGIN}>
+                      <Button
+                        variant="outline"
+                        className="w-full h-12 font-bold rounded-xl"
+                      >
+                        Giriş Yap
+                      </Button>
+                    </Link>
+                    <Link href={ROUTES.AUTH.REGISTER}>
+                      <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 font-bold rounded-xl">
+                        Hemen Başla
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </SheetContent>
