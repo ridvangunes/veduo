@@ -34,6 +34,7 @@ import { ROUTES } from "@/constants/routes";
 
 import { SidebarContent } from "../dashboards/student/StudentSidebar";
 import { InstructorSidebarContent } from "../dashboards/instructor/InstructorSidebar";
+import { CartSidebar } from "../cart/CartSidebar";
 
 const UserMenu = () => (
   <Popover>
@@ -81,7 +82,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDashboardMenuOpen, setIsDashboardMenuOpen] = useState(false);
-  const [isLoggedIn] = useState(false); // Mock login state (Toggle to true for testing)
+  const [isLoggedIn] = useState(true); // Mock login state (Toggle to true for testing)
   const pathname = usePathname();
 
   const isInstructorDashboard = pathname?.startsWith(
@@ -230,7 +231,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-3">
           {isLoggedIn ? (
             <div className="flex items-center gap-4">
-              <Link href={ROUTES.CART}>
+              <CartSidebar>
                 <Button
                   variant="ghost"
                   size="icon"
@@ -241,7 +242,7 @@ const Header = () => {
                     2
                   </span>
                 </Button>
-              </Link>
+              </CartSidebar>
               <UserMenu />
             </div>
           ) : (
