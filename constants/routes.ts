@@ -2,6 +2,10 @@ export const ROUTES = {
   HOME: "/",
   COURSES: "/courses",
   COURSE_DETAIL: "/courses/detail",
+  AUTH: {
+    LOGIN: "/login",
+    REGISTER: "/register",
+  },
   DASHBOARD: {
     STUDENT: {
       OVERVIEW: "/dashboard/student",

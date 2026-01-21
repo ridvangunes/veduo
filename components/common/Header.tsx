@@ -225,15 +225,19 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-end gap-3">
-          <Button
-            variant="ghost"
-            className="hidden sm:flex px-4 cursor-pointer"
-          >
-            Giriş Yap
-          </Button>
-          <Button className="rounded-full shadow-none hover:shadow-lg bg-blue-600 hover:bg-blue-700 cursor-pointer">
-            Hemen Başla
-          </Button>
+          <Link href={ROUTES.AUTH.LOGIN}>
+            <Button
+              variant="ghost"
+              className="hidden sm:flex px-4 cursor-pointer"
+            >
+              Giriş Yap
+            </Button>
+          </Link>
+          <Link href={ROUTES.AUTH.REGISTER}>
+            <Button className="rounded-full shadow-none hover:shadow-lg bg-blue-600 hover:bg-blue-700 cursor-pointer">
+              Hemen Başla
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
