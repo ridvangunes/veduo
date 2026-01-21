@@ -68,7 +68,7 @@ The UI layer is developed first to establish a strong visual and structural foun
 ## 📸 Preview
 
 Live Demo (UI-focused):  
-👉 https://YOUR-PROJECT.vercel.app  
+👉 https://veduo.vercel.app  
 
 Screenshots:  
 *(You can add UI screenshots here later for better presentation)*  
