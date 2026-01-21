@@ -1,18 +1,20 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <div className="min-h-screen flex flex-col bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-600">
-            <Header />
-            <main className="grow pt-18 bg-gray-100">
-                <div className="flex flex-col mx-auto">{children}</div>
-            </main>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className="min-h-screen flex flex-col bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-600">
+      <Header />
+      <main className="grow pt-18 bg-gray-100">
+        <div className="flex flex-col mx-auto">{children}</div>
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </div>
+  );
 }

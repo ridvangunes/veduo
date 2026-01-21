@@ -69,17 +69,27 @@ export const CourseCard = ({ viewType }: CourseCardProps) => {
 
   return (
     <Card className="border-slate-100 rounded-3xl overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all group shadow-none">
-      <div className="relative h-44 bg-linear-to-br from-slate-100 to-slate-50">
+      <div className="relative h-44 bg-linear-to-br from-slate-100 to-slate-50 group-hover:shadow-[inset_0_-20px_40px_-20px_rgba(0,0,0,0.1)] transition-all">
         <Image
           src="/course-placeholder.jpg"
           alt="Kurs"
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-3 left-3 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-blue-500/30">
-          Bestseller
+        {/* Overlay with Quick View */}
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <Button
+            size="sm"
+            className="bg-white text-slate-900 hover:bg-white hover:scale-105 font-bold shadow-xl translate-y-2 group-hover:translate-y-0 transition-all duration-300"
+          >
+            Hızlı Bakış
+          </Button>
         </div>
-        <button className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all shadow-sm cursor-pointer">
+
+        <div className="absolute top-3 left-3 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-blue-500/30 font-poppins tracking-wide">
+          BESTSELLER
+        </div>
+        <button className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:scale-110 active:scale-95 transition-all shadow-sm cursor-pointer z-10">
           <Heart className="w-4 h-4 text-slate-400 hover:text-rose-500 transition-colors" />
         </button>
       </div>

@@ -214,7 +214,6 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
           <Link href={ROUTES.COURSES} className="hover:text-blue-600">
             Kurslar
