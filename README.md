@@ -114,7 +114,7 @@ The codebase is structured to evolve into a full production-ready SaaS applicati
 Frontend Developer  
 
 - LinkedIn: https://www.linkedin.com/in/rıdvan-güneş-12b260123  
-- GitHub: https://github.com/YOUR-USERNAME  
+- GitHub: https://github.com/ridvangunes  
 
 
 📄 License
